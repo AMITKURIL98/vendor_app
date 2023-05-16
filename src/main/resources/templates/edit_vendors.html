@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="ISO-8859-1">
+<title>Vendor Web Page</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Vendor Administration</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/vendors}">Vendors</a>
+      </li>   
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+
+   <div class = "container">
+       <div class = "row">
+          <div class = "col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+              <h1 class = "text-center">Update Vendor</h1>
+              <div class = "card-body">
+                   <form th:action="@{/vendors/{id} (id=${vendor.id})}" th:object = "${vendor}" method = "POST">
+                       <div class ="form-group">
+                          <label>Vendor Name</label>
+                          <input
+                          type = "text"
+                          name = "vendor_Name"
+                          th:field = "*{vendor_Name}"
+                          class = "form-control"
+                          placeholder="Enter Vendor Name"
+                          /> 
+                       </div>
+                       
+                       <div class ="form-group">
+                          <label>Vendor's Bank Account No</label>
+                          <input
+                          type = "text"
+                          name = "bank_Account_No"
+                          th:field = "*{bank_Account_No}"
+                          class = "form-control"
+                          placeholder="Enter Bank Account No"
+                          /> 
+                       </div>
+                       
+                       <div class ="form-group">
+                          <label>Vendor's Bank Name</label>
+                          <input
+                          type = "text"
+                          name = "bank_Name"
+                          th:field = "*{bank_Name}"
+                          class = "form-control"
+                          placeholder="Enter Bank Name"
+                          /> 
+                       </div>
+                       
+                       <div class ="form-group">
+                          <label>Vendor's Address</label>
+                          <input
+                          type = "text"
+                          name = "address"
+                          th:field = "*{address}"
+                          class = "form-control"
+                          placeholder="Enter Address"
+                          /> 
+                       </div>
+                       
+                       <div class ="form-group">
+                          <label>Vendor's City</label>
+                          <input
+                          type = "text"
+                          name = "city"
+                          th:field = "*{city}"
+                          class = "form-control"
+                          placeholder="Enter City"
+                          /> 
+                       </div>
+                       
+                       <div class ="form-group">
+                          <label>Vendor's Country</label>
+                          <input
+                          type = "text"
+                          name = "country"
+                          th:field = "*{country}"
+                          class = "form-control"
+                          placeholder="Enter Country"
+                          /> 
+                       </div>
+                       
+                       <div class ="form-group">
+                          <label>City ZipCode</label>
+                          <input
+                          type = "text"
+                          name = "zipcode"
+                          th:field = "*{zipCode}"
+                          class = "form-control"
+                          placeholder="Enter City ZipCode"
+                          /> 
+                       </div>
+                       
+                       <div class = "box-footer">
+                           <button type="submit" class = "btn btn-primary">
+                              Submit
+                           </button>
+                       
+                       </div>
+                   
+                   </form>
+              
+              </div>
+          </div>
+       
+       </div>
+   
+   </div>
+
+</body>
+</html>
